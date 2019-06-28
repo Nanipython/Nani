@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>inserting products</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+    body{
+        background-color: cyan;
+    }
+    form{
+        padding: 25px;
+        border-radius: 10px;
+        margin-top: 50px;
+    }
+    .container{
+        background-color: orchid;
+        margin-top: 20px;
+        border-radius: 30px;
+        margin-bottom: 20px;
+
+    }
+    a{
+        text-align: center;
+        margin-top: 10px;
+    }
+
+
+</style>
+</head>
+<body>
+<div class ="container">
+    <div class = "row">
+        <div class ="col-md-5">
+            <form method="POST">
+            <h1>Inserting Products</h1>
+                {% csrf_token %}
+                {{ pform }}<br>
+                <center><input type="submit" value="Submit" class="btn btn-success">
+                    <input type="reset" value ="Clear" class="btn btn-danger">
+                </center>
+            </form>
+            </div>
+        <div class ="col-md-5">
+        </div>
+
+    </div>
+     <a href="/#/">Goto Home</a>
+</div>
+
+</body>
+</html>

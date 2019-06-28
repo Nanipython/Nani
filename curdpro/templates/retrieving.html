@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>Reteiving data</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+    h2{
+        text-align: center;
+        color: red;
+        font-family: cursive;
+    }
+    th,td{
+        padding: 10px 20px;
+        text-align: center;
+        color: red;
+    }
+    table{
+        margin-top: 20px;
+
+    }
+    tbody:nth-of-type(even){
+        background-color:yellow;
+    }
+    tbody:nth-of-type(odd){
+        background-color: blue;
+    }
+</style>
+</head>
+<body>
+<h2>Customer data</h2>
+<center>
+<table border="2">
+    { % if data%}
+        <thead>
+        <tr>
+        <th>Product number</th>
+        <th>Prodoct name</th>
+        <th>Product cost</th>
+        <th>Product class</th>
+        <th>Product weight</th>
+        </tr>
+        </thead>
+    {% for i in data %}
+        <tbody>
+        <tr>
+        <td>{{ i.product_number }}</td>
+        <td>{{ i.product_name }}</td>
+        <td>{{ i.product_cost }}</td>
+        <td>{{ i.product_class }}</td>
+        <td>{{ i.product_weight }}</td>
+        </tr>
+         </tbody>
+    {%endfor %}
+    { % else %}
+
+</table>
+<a href="/#">Goto Home</a>
+</center>
+</body>
+</html>
